@@ -1,1 +1,11 @@
 node_modules/
+
+# Prisma / NextJS generated artifacts
+/src/generated/prisma
+
+# Environment variables
+.env
+
+# SQLite database files
+*.db
+*.db-journal
