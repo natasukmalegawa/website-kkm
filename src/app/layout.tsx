@@ -1,6 +1,8 @@
 // src/app/layout.tsx
 import './globals.css'; // Assuming your global styles are here
 import Providers from './providers'; // Or the correct path to your providers file
+import Navbar from '@/components/layout/Navbar'; // Added Navbar import
+import Footer from '@/components/layout/Footer'; // Added Footer import
 
 export const metadata = {
   title: 'My Next.js App',
@@ -15,7 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <div className="flex flex-col min-h-screen">
+          <Navbar /> {/* Added Navbar component */}
+          <main className="flex-grow">
+            <Providers>{children}</Providers>
+          </main>
+          <Footer /> {/* Added Footer component */}
+        </div>
       </body>
     </html>
   );

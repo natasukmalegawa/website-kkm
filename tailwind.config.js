@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme'); // Added for fontFamily
+
 module.exports = {
   darkMode: ["class"], // Required for shadcn/ui dark mode
   content: [
@@ -17,6 +19,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: { // Added Inter as the primary sans-serif font
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+      },
       colors: { // Example, shadcn/ui will manage this via CSS variables
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
